@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kulturverluste der letzten 1000 Jahre</title>
+    <!-- Google Fonts für moderne Schriftarten -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Grundlayout für die Seite */
         * {
@@ -13,17 +15,22 @@
         }
 
         html, body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             height: 100%;
             display: flex;
             flex-direction: column;
+            color: #333;
+        }
+
+        body {
+            background-color: #f5f5f5;
         }
 
         header, footer {
             width: 100%;
-            padding: 20px 0;
-            background-color: #333;
-            color: white;
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: #fff;
             text-align: center;
         }
 
@@ -31,105 +38,173 @@
             margin-top: auto;
         }
 
+        h1 {
+            font-weight: 700;
+            font-size: 2em;
+        }
+
         .main-content {
             flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 40px 0;
+            padding: 40px 20px;
         }
 
         /* Zeitstrahl */
         .timeline-container {
-            max-width: 1000px;
-            padding: 40px 0;
+            max-width: 1200px;
             width: 100%;
+            position: relative;
+            padding: 40px 0;
         }
 
         .timeline {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             position: relative;
         }
 
         .timeline::before {
             content: "";
             position: absolute;
-            top: 50%;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #333;
-            z-index: -1;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: #1e1e1e;
         }
 
         .timeline-event {
-            width: 20%;
-            text-align: center;
+            display: flex;
+            width: 100%;
+            margin-bottom: 40px;
             position: relative;
+        }
+
+        .timeline-event:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-event-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 45%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .timeline-event::before {
             content: "";
             position: absolute;
-            top: 50%;
+            top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 15px;
-            height: 15px;
-            background-color: #333;
+            width: 20px;
+            height: 20px;
+            background-color: #1e1e1e;
             border-radius: 50%;
             z-index: 1;
         }
 
-        /* Stil für Text */
+        .timeline-event:nth-child(odd) .timeline-event-content {
+            margin-left: 60px;
+        }
+
+        .timeline-event:nth-child(even) .timeline-event-content {
+            margin-right: 60px;
+        }
+
         .timeline-event h3 {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 10px;
         }
 
         .timeline-event p {
-            font-size: 14px;
-            color: #666;
+            font-size: 1em;
+            line-height: 1.6;
         }
 
         /* Tooltip-Box */
         .tooltip {
             display: none;
             position: absolute;
-            top: 60px;
-            left: 50%;
+            top: -10px;
+            left: 105%;
             transform: translateX(-50%);
-            width: 200px;
+            width: 250px;
             background-color: #fff;
-            border: 1px solid #333;
-            padding: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             text-align: left;
             z-index: 10;
         }
 
-        /* Tooltip beim Hover anzeigen */
+        .timeline-event:nth-child(even) .tooltip {
+            left: auto;
+            right: 105%;
+        }
+
         .timeline-event:hover .tooltip {
             display: block;
         }
 
         .tooltip p {
-            font-size: 12px;
+            font-size: 0.9em;
             color: #333;
             margin-bottom: 8px;
         }
 
         .tooltip a {
-            font-size: 12px;
-            color: #007BFF;
+            font-size: 0.9em;
+            color: #1e90ff;
             text-decoration: none;
         }
 
         .tooltip a:hover {
             text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-event {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .timeline-event:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .timeline-event-content {
+                width: 100%;
+                margin: 20px 0 0 40px;
+            }
+
+            .timeline-event:nth-child(even) .timeline-event-content {
+                margin: 20px 0 0 40px;
+            }
+
+            .timeline-event::before {
+                left: 20px;
+            }
+
+            .tooltip {
+                left: calc(100% + 20px);
+                top: 0;
+            }
+
+            .timeline-event:nth-child(even) .tooltip {
+                left: calc(100% + 20px);
+                right: auto;
+            }
         }
     </style>
 </head>
@@ -145,42 +220,52 @@
         <div class="timeline-container">
             <div class="timeline">
                 <div class="timeline-event">
-                    <h3>1204</h3>
-                    <p>Plünderung von Konstantinopel</p>
+                    <div class="timeline-event-content">
+                        <h3>1204 – Plünderung von Konstantinopel</h3>
+                        <p>Die Plünderung führte zur Zerstörung byzantinischer Kunst und Schätze.</p>
+                    </div>
                     <div class="tooltip">
-                        <p>Die Plünderung von Konstantinopel führte zur Zerstörung byzantinischer Kunst und Schätze.</p>
+                        <p>Die Eroberung von Konstantinopel durch Kreuzritter verursachte immense kulturelle Verluste.</p>
                         <a href="https://de.wikipedia.org/wiki/Pl%C3%BCnderung_von_Konstantinopel" target="_blank">Mehr erfahren</a>
                     </div>
                 </div>
                 <div class="timeline-event">
-                    <h3>1521</h3>
-                    <p>Zerstörung des Azteken-Tempels</p>
-                    <div class="tooltip">
+                    <div class="timeline-event-content">
+                        <h3>1521 – Zerstörung des Azteken-Tempels</h3>
                         <p>Die Spanier zerstörten große Teile der aztekischen Kultur in Tenochtitlan.</p>
+                    </div>
+                    <div class="tooltip">
+                        <p>Die Eroberung durch Hernán Cortés führte zum Verlust zahlreicher aztekischer Artefakte.</p>
                         <a href="https://de.wikipedia.org/wiki/Tenochtitlan" target="_blank">Mehr erfahren</a>
                     </div>
                 </div>
                 <div class="timeline-event">
-                    <h3>1666</h3>
-                    <p>Großbrand von London</p>
+                    <div class="timeline-event-content">
+                        <h3>1666 – Großer Brand von London</h3>
+                        <p>Ein verheerendes Feuer zerstörte zahlreiche historische Bauwerke.</p>
+                    </div>
                     <div class="tooltip">
-                        <p>Ein verheerendes Feuer zerstörte zahlreiche historische Bauwerke in London.</p>
-                        <a href="https://de.wikipedia.org/wiki/Gro%C3%9Fbrand_von_London" target="_blank">Mehr erfahren</a>
+                        <p>Der Brand vernichtete große Teile der mittelalterlichen Stadtstruktur Londons.</p>
+                        <a href="https://de.wikipedia.org/wiki/Gro%C3%9Fer_Brand_von_London" target="_blank">Mehr erfahren</a>
                     </div>
                 </div>
                 <div class="timeline-event">
-                    <h3>1945</h3>
-                    <p>Zweiter Weltkrieg</p>
+                    <div class="timeline-event-content">
+                        <h3>1945 – Zweiter Weltkrieg</h3>
+                        <p>Zahlreiche Kunstwerke und historische Gebäude gingen verloren.</p>
+                    </div>
                     <div class="tooltip">
-                        <p>Viele Kunstwerke und historische Gebäude gingen im Krieg verloren.</p>
+                        <p>Bombardierungen und Plünderungen führten zu erheblichen kulturellen Verlusten.</p>
                         <a href="https://de.wikipedia.org/wiki/Zweiter_Weltkrieg" target="_blank">Mehr erfahren</a>
                     </div>
                 </div>
                 <div class="timeline-event">
-                    <h3>2001</h3>
-                    <p>Zerstörung der Buddhas von Bamiyan</p>
+                    <div class="timeline-event-content">
+                        <h3>2001 – Zerstörung der Buddhas von Bamiyan</h3>
+                        <p>Die Taliban zerstörten die über 1.500 Jahre alten Buddha-Statuen.</p>
+                    </div>
                     <div class="tooltip">
-                        <p>Die Taliban zerstörten die über 1.500 Jahre alten Buddha-Statuen in Afghanistan.</p>
+                        <p>Ein bedeutender Verlust für das Weltkulturerbe und die buddhistische Geschichte.</p>
                         <a href="https://de.wikipedia.org/wiki/Buddhas_von_Bamiyan" target="_blank">Mehr erfahren</a>
                     </div>
                 </div>
@@ -195,5 +280,4 @@
 
 </body>
 </html>
-
 
