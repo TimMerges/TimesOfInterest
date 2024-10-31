@@ -5,11 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meine Webseite mit Zeitstrahl</title>
     <style>
-        /* Grundlayout für den Zeitstrahl */
+        /* Grundlayout für die Seite */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header- und Footer-Stil */
+        header, footer {
+            width: 100%;
+            padding: 20px 0;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+
+        /* Zeitstrahl Container */
         .timeline-container {
             position: relative;
             max-width: 1000px;
-            margin: 0 auto;
+            margin: 40px auto;
             padding: 40px 0;
         }
 
@@ -65,7 +84,13 @@
     </style>
 </head>
 <body>
-    <h1>Meine Webseite mit Zeitstrahl</h1>
+
+    <!-- Header -->
+    <header>
+        <h1>Meine Webseite mit Zeitstrahl</h1>
+    </header>
+
+    <!-- Zeitstrahl -->
     <div class="timeline-container">
         <div class="timeline">
             <div class="timeline-event">
@@ -89,6 +114,16 @@
                 <p>Aktuelle Fortschritte</p>
             </div>
         </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Meine Webseite | Erstellt mit HTML & CSS</p>
+    </footer>
+
+</body>
+</html>
+
     </div>
 </body>
 </html>
