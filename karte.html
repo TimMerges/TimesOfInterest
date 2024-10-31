@@ -7,7 +7,7 @@
     <!-- Google Fonts für moderne Schriftarten -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Leaflet CSS für die interaktive Karte -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-oL++SIbYBJ8KdWnxbIrwVPe8B0p1C1EN4ZZgJdE+PcQ=" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         /* Grundlayout für die Seite */
         * {
@@ -139,7 +139,7 @@
     </footer>
 
     <!-- Leaflet JS für die interaktive Karte -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-pDuaoEDDoS8ct+vN0qNvtWJhvxexrcl9NcRofl1jbUQ=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <!-- JavaScript für den Counter und die Karte -->
     <script>
@@ -159,8 +159,8 @@
             }, stepTime);
         }
 
-        // Animation starten
-        window.onload = function() {
+        // Ausführung nach dem Laden des DOM
+        document.addEventListener('DOMContentLoaded', function() {
             // Beispiel: Anzahl der geschützten Kulturstätten
             var anzahlKulturstaetten = 1157; // Aktualisieren Sie diese Zahl mit den aktuellen Daten
             animateCounter("counter-number", 0, anzahlKulturstaetten, 2000);
@@ -193,17 +193,14 @@
                 // Weitere Kulturstätten können hier hinzugefügt werden
             ];
 
-            // Anzahl der Kulturstätten für den Counter ermitteln (falls dynamisch)
-            // anzahlKulturstaetten = kulturstaetten.length;
-            // animateCounter("counter-number", 0, anzahlKulturstaetten, 2000);
-
             // Markierungen zur Karte hinzufügen
             kulturstaetten.forEach(function(staette) {
                 L.marker(staette.coords)
                     .addTo(map)
                     .bindPopup('<b>' + staette.name + '</b><br>' + staette.info);
             });
-        };
+        });
     </script>
 </body>
 </html>
+
