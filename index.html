@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine Webseite mit Zeitstrahl</title>
+    <title>Kulturverluste der letzten 1000 Jahre</title>
     <style>
         /* Grundlayout für die Seite */
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            box-sizing: border-box;
         }
 
-        /* Header- und Footer-Stil */
+        html, body {
+            font-family: Arial, sans-serif;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
         header, footer {
             width: 100%;
             padding: 20px 0;
@@ -24,12 +27,24 @@
             text-align: center;
         }
 
-        /* Zeitstrahl Container */
-        .timeline-container {
-            position: relative;
-            max-width: 1000px;
-            margin: 40px auto;
+        footer {
+            margin-top: auto;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             padding: 40px 0;
+        }
+
+        /* Zeitstrahl */
+        .timeline-container {
+            max-width: 1000px;
+            padding: 40px 0;
+            width: 100%;
         }
 
         .timeline {
@@ -38,7 +53,6 @@
             position: relative;
         }
 
-        /* Zeitstrahl Linie */
         .timeline::before {
             content: "";
             position: absolute;
@@ -50,7 +64,6 @@
             z-index: -1;
         }
 
-        /* Zeitstrahl-Ereignisse */
         .timeline-event {
             width: 20%;
             text-align: center;
@@ -81,50 +94,106 @@
             font-size: 14px;
             color: #666;
         }
+
+        /* Tooltip-Box */
+        .tooltip {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            background-color: #fff;
+            border: 1px solid #333;
+            padding: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            z-index: 10;
+        }
+
+        /* Tooltip beim Hover anzeigen */
+        .timeline-event:hover .tooltip {
+            display: block;
+        }
+
+        .tooltip p {
+            font-size: 12px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .tooltip a {
+            font-size: 12px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .tooltip a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 
     <!-- Header -->
     <header>
-        <h1>Meine Webseite mit Zeitstrahl</h1>
+        <h1>Kulturverluste der letzten 1000 Jahre</h1>
     </header>
 
-    <!-- Zeitstrahl -->
-    <div class="timeline-container">
-        <div class="timeline">
-            <div class="timeline-event">
-                <h3>2000</h3>
-                <p>Beginn des neuen Jahrtausends</p>
-            </div>
-            <div class="timeline-event">
-                <h3>2005</h3>
-                <p>Erste Meilensteine erreicht</p>
-            </div>
-            <div class="timeline-event">
-                <h3>2010</h3>
-                <p>Größere Entwicklungen</p>
-            </div>
-            <div class="timeline-event">
-                <h3>2015</h3>
-                <p>Neue Herausforderungen</p>
-            </div>
-            <div class="timeline-event">
-                <h3>2020</h3>
-                <p>Aktuelle Fortschritte</p>
+    <!-- Hauptinhalt -->
+    <div class="main-content">
+        <div class="timeline-container">
+            <div class="timeline">
+                <div class="timeline-event">
+                    <h3>1204</h3>
+                    <p>Plünderung von Konstantinopel</p>
+                    <div class="tooltip">
+                        <p>Die Plünderung von Konstantinopel führte zur Zerstörung byzantinischer Kunst und Schätze.</p>
+                        <a href="https://de.wikipedia.org/wiki/Pl%C3%BCnderung_von_Konstantinopel" target="_blank">Mehr erfahren</a>
+                    </div>
+                </div>
+                <div class="timeline-event">
+                    <h3>1521</h3>
+                    <p>Zerstörung des Azteken-Tempels</p>
+                    <div class="tooltip">
+                        <p>Die Spanier zerstörten große Teile der aztekischen Kultur in Tenochtitlan.</p>
+                        <a href="https://de.wikipedia.org/wiki/Tenochtitlan" target="_blank">Mehr erfahren</a>
+                    </div>
+                </div>
+                <div class="timeline-event">
+                    <h3>1666</h3>
+                    <p>Großbrand von London</p>
+                    <div class="tooltip">
+                        <p>Ein verheerendes Feuer zerstörte zahlreiche historische Bauwerke in London.</p>
+                        <a href="https://de.wikipedia.org/wiki/Gro%C3%9Fbrand_von_London" target="_blank">Mehr erfahren</a>
+                    </div>
+                </div>
+                <div class="timeline-event">
+                    <h3>1945</h3>
+                    <p>Zweiter Weltkrieg</p>
+                    <div class="tooltip">
+                        <p>Viele Kunstwerke und historische Gebäude gingen im Krieg verloren.</p>
+                        <a href="https://de.wikipedia.org/wiki/Zweiter_Weltkrieg" target="_blank">Mehr erfahren</a>
+                    </div>
+                </div>
+                <div class="timeline-event">
+                    <h3>2001</h3>
+                    <p>Zerstörung der Buddhas von Bamiyan</p>
+                    <div class="tooltip">
+                        <p>Die Taliban zerstörten die über 1.500 Jahre alten Buddha-Statuen in Afghanistan.</p>
+                        <a href="https://de.wikipedia.org/wiki/Buddhas_von_Bamiyan" target="_blank">Mehr erfahren</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Meine Webseite | Erstellt mit HTML & CSS</p>
+        <p>&copy; 2024 Kulturgeschichte | Die größten kulturellen Verluste</p>
     </footer>
 
 </body>
 </html>
 
-    </div>
-</body>
-</html>
 
