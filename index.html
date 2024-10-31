@@ -54,7 +54,6 @@
             align-items: center;
             padding: 60px 20px;
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.8);
             margin: 20px;
             border-radius: 10px;
         }
@@ -62,6 +61,11 @@
         .main-content h2 {
             font-size: 1.8em;
             margin-bottom: 40px;
+            color: #fff;
+        }
+
+        .main-content p {
+            color: #fff;
         }
 
         /* Navigationsbuttons */
@@ -72,18 +76,29 @@
         }
 
         .nav-button {
-            background-color: #1e1e1e;
+            background-color: rgba(30, 30, 30, 0.8);
             color: #fff;
-            padding: 20px 40px;
+            padding: 20px;
             border-radius: 10px;
             text-decoration: none;
             font-size: 1.2em;
             font-weight: bold;
             transition: background-color 0.3s ease;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .nav-button:hover {
-            background-color: #333;
+            background-color: rgba(50, 50, 50, 0.8);
+        }
+
+        .nav-button img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 5px;
         }
 
         /* Responsive Design */
@@ -112,8 +127,14 @@
         <h2>Willkommen auf unserer Webseite zum Schutz von Kulturstätten und kulturellen Errungenschaften</h2>
         <p>Bitte wählen Sie eine der folgenden Optionen:</p>
         <div class="nav-buttons">
-            <a href="timeline.html" class="nav-button">Geschichte des Kulturschutzes</a>
-            <a href="karte.html" class="nav-button">Kulturstätten weltweit</a>
+            <a href="timeline.html" class="nav-button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Ancestors_2.gif" alt="Geschichte">
+                Geschichte des Kulturschutzes
+            </a>
+            <a href="karte.html" class="nav-button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Winkel-tripel-projection.jpg" alt="Karte">
+                Kulturstätten weltweit
+            </a>
         </div>
     </div>
 
@@ -121,6 +142,10 @@
     <footer>
         <p>&copy; 2024 Kulturschutz | Bewahrung unseres kulturellen Erbes</p>
     </footer>
+
+</body>
+</html>
+
 
 </body>
 </html>
