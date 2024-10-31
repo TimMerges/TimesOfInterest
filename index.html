@@ -93,6 +93,7 @@
             border-radius: 8px;
             width: 45%;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative; /* Hinzugefügt */
         }
 
         .timeline-event::before {
@@ -162,7 +163,7 @@
             right: 105%;
         }
 
-        .timeline-event:hover .tooltip {
+        .timeline-event-content:hover .tooltip {
             display: block;
         }
 
@@ -240,10 +241,10 @@
                         <p class="image-caption">Bildnachweis: David Aubert, Public Domain</p>
                         <h3>1204 – Plünderung von Konstantinopel</h3>
                         <p>Die Plünderung führte zur Zerstörung byzantinischer Kunst und Schätze.</p>
-                    </div>
-                    <div class="tooltip">
-                        <p>Die Eroberung von Konstantinopel durch Kreuzritter verursachte immense kulturelle Verluste.</p>
-                        <a href="https://de.wikipedia.org/wiki/Eroberung_von_Konstantinopel_(1204)" target="_blank">Mehr erfahren</a>
+                        <div class="tooltip">
+                            <p>Die Eroberung von Konstantinopel durch Kreuzritter verursachte immense kulturelle Verluste.</p>
+                            <a href="https://de.wikipedia.org/wiki/Eroberung_von_Konstantinopel_(1204)" target="_blank">Mehr erfahren</a>
+                        </div>
                     </div>
                 </div>
 
@@ -254,10 +255,10 @@
                         <p class="image-caption">Bildnachweis: Thelmadatter, Public domain, via Wikimedia Commons</p>
                         <h3>1521 – Zerstörung des Azteken-Tempels</h3>
                         <p>Die Spanier zerstörten große Teile der aztekischen Kultur in Tenochtitlan.</p>
-                    </div>
-                    <div class="tooltip">
-                        <p>Die Eroberung durch Hernán Cortés führte zum Verlust zahlreicher aztekischer Artefakte.</p>
-                        <a href="https://de.wikipedia.org/wiki/Tenochtitlan" target="_blank">Mehr erfahren</a>
+                        <div class="tooltip">
+                            <p>Die Eroberung durch Hernán Cortés führte zum Verlust zahlreicher aztekischer Artefakte.</p>
+                            <a href="https://de.wikipedia.org/wiki/Tenochtitlan" target="_blank">Mehr erfahren</a>
+                        </div>
                     </div>
                 </div>
 
@@ -268,10 +269,10 @@
                         <p class="image-caption">Bildnachweis: Unbekannter Künstler, Public Domain</p>
                         <h3>1666 – Großer Brand von London</h3>
                         <p>Ein verheerendes Feuer zerstörte zahlreiche historische Bauwerke.</p>
-                    </div>
-                    <div class="tooltip">
-                        <p>Der Brand vernichtete große Teile der mittelalterlichen Stadtstruktur Londons.</p>
-                        <a href="https://de.wikipedia.org/wiki/Gro%C3%9Fer_Brand_von_London" target="_blank">Mehr erfahren</a>
+                        <div class="tooltip">
+                            <p>Der Brand vernichtete große Teile der mittelalterlichen Stadtstruktur Londons.</p>
+                            <a href="https://de.wikipedia.org/wiki/Gro%C3%9Fer_Brand_von_London" target="_blank">Mehr erfahren</a>
+                        </div>
                     </div>
                 </div>
 
@@ -282,10 +283,10 @@
                         <p class="image-caption">Royal Air Force official photographer, Public domain, via Wikimedia Commons</p>
                         <h3>1945 – Zweiter Weltkrieg</h3>
                         <p>Zahlreiche Kunstwerke und historische Gebäude gingen verloren.</p>
-                    </div>
-                    <div class="tooltip">
-                        <p>Bombardierungen und Plünderungen führten zu erheblichen kulturellen Verlusten.</p>
-                        <a href="https://de.wikipedia.org/wiki/Zweiter_Weltkrieg" target="_blank">Mehr erfahren</a>
+                        <div class="tooltip">
+                            <p>Bombardierungen und Plünderungen führten zu erheblichen kulturellen Verlusten.</p>
+                            <a href="https://de.wikipedia.org/wiki/Zweiter_Weltkrieg" target="_blank">Mehr erfahren</a>
+                        </div>
                     </div>
                 </div>
 
@@ -293,13 +294,13 @@
                 <div class="timeline-event">
                     <div class="timeline-event-content">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/Buddha_Bamiyan_1963.jpg" alt="Buddhas von Bamiyan">
-                        <p class="image-caption">UNESCO/A Lezine;, Copyrighted free use, via Wikimedia Commons</p>
+                        <p class="image-caption">Bildnachweis: UNESCO/A Lezine;, Copyrighted free use, via Wikimedia Commons</p>
                         <h3>2001 – Zerstörung der Buddhas von Bamiyan</h3>
                         <p>Die Taliban zerstörten die über 1.500 Jahre alten Buddha-Statuen.</p>
-                    </div>
-                    <div class="tooltip">
-                        <p>Ein bedeutender Verlust für das Weltkulturerbe und die buddhistische Geschichte.</p>
-                        <a href="https://de.wikipedia.org/wiki/Buddhas_von_Bamiyan" target="_blank">Mehr erfahren</a>
+                        <div class="tooltip">
+                            <p>Ein bedeutender Verlust für das Weltkulturerbe und die buddhistische Geschichte.</p>
+                            <a href="https://de.wikipedia.org/wiki/Buddhas_von_Bamiyan" target="_blank">Mehr erfahren</a>
+                        </div>
                     </div>
                 </div>
             </div>
