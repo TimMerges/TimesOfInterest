@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Die größten Errungenschaften zum Schutz der Kulturschaffenden</title>
+    <title>Schutz von Kulturstätten und kulturellen Errungenschaften</title>
     <!-- Google Fonts für moderne Schriftarten -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -145,8 +145,8 @@
         .tooltip {
             display: none;
             position: absolute;
-            top: -10px;
-            left: 105%;
+            top: 100%; /* Position unterhalb des Inhalts */
+            left: 50%;
             transform: translateX(-50%);
             width: 250px;
             background-color: #fff;
@@ -156,11 +156,6 @@
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             text-align: left;
             z-index: 10;
-        }
-
-        .timeline-event:nth-child(even) .tooltip {
-            left: auto;
-            right: 105%;
         }
 
         .timeline-event-content:hover .tooltip {
@@ -212,13 +207,9 @@
             }
 
             .tooltip {
-                left: calc(100% + 20px);
-                top: 0;
-            }
-
-            .timeline-event:nth-child(even) .tooltip {
-                left: calc(100% + 20px);
-                right: auto;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 100%;
             }
         }
     </style>
@@ -227,7 +218,7 @@
 
     <!-- Header -->
     <header>
-        <h1>Die größten Errungenschaften zum Schutz der Kulturschaffenden</h1>
+        <h1>Schutz von Kulturstätten und kulturellen Errungenschaften</h1>
     </header>
 
     <!-- Hauptinhalt -->
@@ -237,13 +228,13 @@
                 <!-- Ereignis 1 -->
                 <div class="timeline-event">
                     <div class="timeline-event-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Berne_convention_1886.jpg" alt="Berner Übereinkunft 1886">
-                        <p class="image-caption">Bildnachweis: Unbekannter Künstler, Public Domain</p>
-                        <h3>1886 – Berner Übereinkunft</h3>
-                        <p>Einführung eines internationalen Urheberrechtsschutzes für Künstler und Autoren.</p>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Distinctive_emblem_for_cultural_property.svg" alt="Haager Konvention 1954">
+                        <p class="image-caption">Bildnachweis:Jan Zachwatowicz Poland, Public domain, via Wikimedia Commons</p>
+                        <h3>1954 – Haager Konvention</h3>
+                        <p>Erstes internationales Abkommen zum Schutz von Kulturgut bei bewaffneten Konflikten.</p>
                         <div class="tooltip">
-                            <p>Die Berner Übereinkunft legte den Grundstein für den weltweiten Schutz geistigen Eigentums.</p>
-                            <a href="https://de.wikipedia.org/wiki/Berner_%C3%9Cbereinkunft_zum_Schutz_von_Werken_der_Literatur_und_Kunst" target="_blank">Mehr erfahren</a>
+                            <p>Die Haager Konvention legt Maßnahmen fest, um Kulturgüter in Kriegszeiten zu schützen.</p>
+                            <a href="https://de.wikipedia.org/wiki/Haager_Konvention_zum_Schutz_von_Kulturgut_bei_bewaffneten_Konflikten" target="_blank">Mehr erfahren</a>
                         </div>
                     </div>
                 </div>
@@ -251,13 +242,13 @@
                 <!-- Ereignis 2 -->
                 <div class="timeline-event">
                     <div class="timeline-event-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Universal_Declaration_of_Human_Rights.jpg" alt="Allgemeine Erklärung der Menschenrechte 1948">
-                        <p class="image-caption">Bildnachweis: United Nations, Public Domain</p>
-                        <h3>1948 – Allgemeine Erklärung der Menschenrechte</h3>
-                        <p>Anerkennung des Rechts auf Schutz geistigen Eigentums als Menschenrecht.</p>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Unesco_world_heritage_sites.png" alt="UNESCO-Welterbekonvention 1972">
+                        <p class="image-caption">Bildnachweis: Jkan997, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons</p>
+                        <h3>1972 – UNESCO-Welterbekonvention</h3>
+                        <p>Gründung des UNESCO-Welterbes zum Schutz von Kultur- und Naturstätten von außergewöhnlichem Wert.</p>
                         <div class="tooltip">
-                            <p>Artikel 27 betont das Recht jedes Einzelnen auf Schutz der moralischen und materiellen Interessen.</p>
-                            <a href="https://de.wikipedia.org/wiki/Allgemeine_Erkl%C3%A4rung_der_Menschenrechte" target="_blank">Mehr erfahren</a>
+                            <p>Die Konvention fördert die Identifizierung, den Schutz und die Erhaltung des kulturellen Erbes.</p>
+                            <a href="https://de.wikipedia.org/wiki/UNESCO-Welterbe" target="_blank">Mehr erfahren</a>
                         </div>
                     </div>
                 </div>
@@ -265,13 +256,13 @@
                 <!-- Ereignis 3 -->
                 <div class="timeline-event">
                     <div class="timeline-event-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/WIPO_logo.svg" alt="Gründung der WIPO 1967">
-                        <p class="image-caption">Bildnachweis: World Intellectual Property Organization, Public Domain</p>
-                        <h3>1967 – Gründung der WIPO</h3>
-                        <p>Die Weltorganisation für geistiges Eigentum wurde gegründet, um Kreative international zu schützen.</p>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Abusimbel.jpg" alt="Rettung der Nubischen Denkmäler">
+                        <p class="image-caption">Bildnachweis: "Per-Olow" - Per-Olow Anderson (1921-1989), Public domain, via Wikimedia Commons</p>
+                        <h3>1960-1980 – Rettung der Nubischen Denkmäler</h3>
+                        <p>Internationale Kampagne zur Rettung der Tempel von Abu Simbel vor den Fluten des Assuan-Staudamms.</p>
                         <div class="tooltip">
-                            <p>Die WIPO fördert den Schutz von Rechten an geistigem Eigentum weltweit.</p>
-                            <a href="https://de.wikipedia.org/wiki/Weltorganisation_f%C3%BCr_geistiges_Eigentum" target="_blank">Mehr erfahren</a>
+                            <p>Ein Meilenstein der internationalen Zusammenarbeit zum Schutz von Kulturgütern.</p>
+                            <a href="https://de.wikipedia.org/wiki/Tempel_von_Abu_Simbel" target="_blank">Mehr erfahren</a>
                         </div>
                     </div>
                 </div>
@@ -279,13 +270,13 @@
                 <!-- Ereignis 4 -->
                 <div class="timeline-event">
                     <div class="timeline-event-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Logo_TRIPS.svg" alt="TRIPS-Abkommen 1995">
-                        <p class="image-caption">Bildnachweis: World Trade Organization, Public Domain</p>
-                        <h3>1995 – Inkrafttreten des TRIPS-Abkommens</h3>
-                        <p>Verpflichtung der WTO-Mitglieder zu Mindeststandards im Schutz geistigen Eigentums.</p>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/UNESCO-ICH-blue.svg" alt="UNESCO-Konvention 2006">
+                        <p class="image-caption">Bildnachweis: Dragutin Dado Kovačević, Public domain, via Wikimedia Commons</p>
+                        <h3>2003 – Konvention zur Bewahrung des immateriellen Kulturerbes</h3>
+                        <p>Schutz von Traditionen, Bräuchen und Ausdrucksformen als Teil des kulturellen Erbes.</p>
                         <div class="tooltip">
-                            <p>TRIPS harmonisiert den Schutz von Urheberrechten international.</p>
-                            <a href="https://de.wikipedia.org/wiki/Agreement_on_Trade-Related_Aspects_of_Intellectual_Property_Rights" target="_blank">Mehr erfahren</a>
+                            <p>Die Konvention fördert das Bewusstsein für die Bedeutung des immateriellen Kulturerbes.</p>
+                            <a href="https://de.wikipedia.org/wiki/Immaterielles_Kulturerbe" target="_blank">Mehr erfahren</a>
                         </div>
                     </div>
                 </div>
@@ -293,13 +284,13 @@
                 <!-- Ereignis 5 -->
                 <div class="timeline-event">
                     <div class="timeline-event-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/General_Assembly_hall_UN_Geneva.jpg" alt="UNESCO-Konvention 2005">
-                        <p class="image-caption">Bildnachweis: UN Photo/Jean-Marc Ferré, CC BY-NC-ND 2.0</p>
-                        <h3>2005 – UNESCO-Konvention zum Schutz kultureller Vielfalt</h3>
-                        <p>Förderung und Schutz der Vielfalt kultureller Ausdrucksformen weltweit.</p>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Distinctive_emblem_for_cultural_property.svg" alt="Gründung von Blue Shield International">
+                        <p class="image-caption">Bildnachweis: Jan Zachwatowicz Poland, Public domain, via Wikimedia Commons</p>
+                        <h3>1996 – Gründung von Blue Shield International</h3>
+                        <p>Internationale Organisation zum Schutz von Kulturgütern bei bewaffneten Konflikten und Katastrophen.</p>
                         <div class="tooltip">
-                            <p>Die Konvention stärkt die Rechte von Kulturschaffenden und kulturellen Gemeinschaften.</p>
-                            <a href="https://de.wikipedia.org/wiki/UNESCO-%C3%9Cbereinkommen_zum_Schutz_und_zur_F%C3%B6rderung_der_Vielfalt_kultureller_Ausdrucksformen" target="_blank">Mehr erfahren</a>
+                            <p>Blue Shield agiert als "kulturelles Rotes Kreuz" zum Schutz von Kulturerbe.</p>
+                            <a href="https://de.wikipedia.org/wiki/Blue_Shield_International" target="_blank">Mehr erfahren</a>
                         </div>
                     </div>
                 </div>
@@ -307,13 +298,13 @@
                 <!-- Ereignis 6 -->
                 <div class="timeline-event">
                     <div class="timeline-event-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/EU_Copyright_Directive_logo.svg" alt="EU-Urheberrechtsrichtlinie 2019">
-                        <p class="image-caption">Bildnachweis: Europäische Union, Public Domain</p>
-                        <h3>2019 – EU-Urheberrechtsrichtlinie</h3>
-                        <p>Modernisierung des Urheberrechts in der digitalen Ära zum Schutz von Kreativen.</p>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_the_United_Nations.svg" alt="UN-Resolution 2347 (2017)">
+                        <p class="image-caption">Bildnachweis: Denelson83, Zscout370 ve Madden, Public domain, via Wikimedia Commons</p>
+                        <h3>2017 – UN-Resolution 2347</h3>
+                        <p>Erste Resolution des UN-Sicherheitsrats zum Schutz von Kulturgut in bewaffneten Konflikten.</p>
                         <div class="tooltip">
-                            <p>Die Richtlinie stärkt die Position von Urhebern gegenüber Online-Plattformen.</p>
-                            <a href="https://de.wikipedia.org/wiki/Richtlinie_%28EU%29_2019/790_%28Urheberrechtsrichtlinie%29" target="_blank">Mehr erfahren</a>
+                            <p>Die Resolution verurteilt die Zerstörung von Kulturgut und fordert Maßnahmen zu dessen Schutz.</p>
+                            <a href="https://de.wikipedia.org/wiki/Liste_der_Resolutionen_des_UN-Sicherheitsrates_(2017)" target="_blank">Mehr erfahren</a>
                         </div>
                     </div>
                 </div>
@@ -324,12 +315,8 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Kulturgeschichte | Die größten Errungenschaften zum Schutz der Kulturschaffenden</p>
+        <p>&copy; 2024 Kulturschutz | Schutz von Kulturstätten und kulturellen Errungenschaften</p>
     </footer>
-
-</body>
-</html>
-
 
 </body>
 </html>
