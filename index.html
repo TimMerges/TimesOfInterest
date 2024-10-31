@@ -3,10 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Willkommen auf meiner Webseite</title>
+    <title>Meine Webseite mit Zeitstrahl</title>
+    <style>
+        /* Grundlayout für den Zeitstrahl */
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        /* Zeitstrahl Linie */
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #333;
+            z-index: -1;
+        }
+
+        /* Zeitstrahl-Ereignisse */
+        .timeline-event {
+            width: 20%;
+            text-align: center;
+            position: relative;
+        }
+
+        .timeline-event::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 15px;
+            background-color: #333;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Stil für Text */
+        .timeline-event h3 {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .timeline-event p {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hallo Welt!</h1>
-    <p>Dies ist eine einfache Webseite gehostet auf GitHub Pages.</p>
+    <h1>Meine Webseite mit Zeitstrahl</h1>
+    <div class="timeline-container">
+        <div class="timeline">
+            <div class="timeline-event">
+                <h3>2000</h3>
+                <p>Beginn des neuen Jahrtausends</p>
+            </div>
+            <div class="timeline-event">
+                <h3>2005</h3>
+                <p>Erste Meilensteine erreicht</p>
+            </div>
+            <div class="timeline-event">
+                <h3>2010</h3>
+                <p>Größere Entwicklungen</p>
+            </div>
+            <div class="timeline-event">
+                <h3>2015</h3>
+                <p>Neue Herausforderungen</p>
+            </div>
+            <div class="timeline-event">
+                <h3>2020</h3>
+                <p>Aktuelle Fortschritte</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+
