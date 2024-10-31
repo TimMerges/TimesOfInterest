@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geschützte Kulturstätten weltweit</title>
+    <!-- Google Fonts für moderne Schriftarten -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Leaflet CSS für die interaktive Karte -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-oL++SIbYBJ8KdWnxbIrwVPe8B0p1C1EN4ZZgJdE+PcQ=" crossorigin=""/>
+    <style>
+        /* Grundlayout für die Seite */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: 'Roboto', sans-serif;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            color: #333;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        header, footer {
+            width: 100%;
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: #fff;
+            text-align: center;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+
+        h1 {
+            font-weight: 700;
+            font-size: 2em;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        /* Counter-Stil */
+        .counter-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .counter-container h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .counter {
+            display: inline-block;
+            background-color: #1e1e1e;
+            color: #fff;
+            padding: 30px 50px;
+            border-radius: 10px;
+        }
+
+        .counter-number {
+            font-size: 4em;
+            font-weight: bold;
+            display: block;
+        }
+
+        .counter p {
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        /* Stil für die Karte */
+        #map {
+            width: 100%;
+            max-width: 1200px;
+            height: 600px;
+            margin-bottom: 40px;
+            border: 2px solid #1e1e1e;
+            border-radius: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .counter-container h2 {
+                font-size: 1.5em;
+            }
+
+            .counter-number {
+                font-size: 3em;
+            }
+
+            #map {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Geschützte Kulturstätten weltweit</h1>
+    </header>
+
+    <!-- Hauptinhalt -->
+    <div class="main-content">
+
+        <!-- Counter -->
+        <div class="counter-container">
+            <h2>Anzahl der geschützten Kulturstätten</h2>
+            <div class="counter">
+                <span class="counter-number" id="counter-number">0</span>
+                <p>Kulturstätten stehen unter internationalem Schutz</p>
+            </div>
+        </div>
+
+        <!-- Interaktive Karte -->
+        <div id="map"></div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Kulturschutz | Geschützte Kulturstätten weltweit</p>
+    </footer>
+
+    <!-- Leaflet JS für die interaktive Karte -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-pDuaoEDDoS8ct+vN0qNvtWJhvxexrcl9NcRofl1jbUQ=" crossorigin=""></script>
+
+    <!-- JavaScript für den Counter und die Karte -->
+    <script>
+        // Funktion zum animierten Hochzählen
+        function animateCounter(id, start, end, duration) {
+            var obj = document.getElementById(id);
+            var range = end - start;
+            var current = start;
+            var increment = end > start ? 1 : -1;
+            var stepTime = Math.abs(Math.floor(duration / range));
+            var timer = setInterval(function() {
+                current += increment;
+                obj.textContent = current.toLocaleString('de-DE');
+                if (current == end) {
+                    clearInterval(timer);
+                }
+            }, stepTime);
+        }
+
+        // Animation starten
+        window.onload = function() {
+            // Beispiel: Anzahl der geschützten Kulturstätten
+            var anzahlKulturstaetten = 1157; // Aktualisieren Sie diese Zahl mit den aktuellen Daten
+            animateCounter("counter-number", 0, anzahlKulturstaetten, 2000);
+
+            // Karte initialisieren
+            var map = L.map('map').setView([20, 0], 2);
+
+            // OpenStreetMap Tile Layer hinzufügen
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; OpenStreetMap contributors'
+            }).addTo(map);
+
+            // Beispiel-Daten für Kulturstätten
+            var kulturstaetten = [
+                {
+                    name: "Pyramiden von Gizeh",
+                    coords: [29.9792, 31.1342],
+                    info: "Die Pyramiden von Gizeh sind die bekanntesten Pyramiden Ägyptens."
+                },
+                {
+                    name: "Kölner Dom",
+                    coords: [50.9413, 6.9583],
+                    info: "Der Kölner Dom ist eine gotische Kathedrale in Köln, Deutschland."
+                },
+                {
+                    name: "Große Mauer",
+                    coords: [40.4319, 116.5704],
+                    info: "Die Große Mauer ist ein altes Befestigungsbauwerk in China."
+                },
+                // Weitere Kulturstätten können hier hinzugefügt werden
+            ];
+
+            // Anzahl der Kulturstätten für den Counter ermitteln (falls dynamisch)
+            // anzahlKulturstaetten = kulturstaetten.length;
+            // animateCounter("counter-number", 0, anzahlKulturstaetten, 2000);
+
+            // Markierungen zur Karte hinzufügen
+            kulturstaetten.forEach(function(staette) {
+                L.marker(staette.coords)
+                    .addTo(map)
+                    .bindPopup('<b>' + staette.name + '</b><br>' + staette.info);
+            });
+        };
+    </script>
+</body>
+</html>
