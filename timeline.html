@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schutz von Kulturstätten und kulturellen Errungenschaften</title>
+    <title>Willkommen | Kulturschutz</title>
     <!-- Google Fonts für moderne Schriftarten -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -15,21 +15,24 @@
         }
 
         html, body {
-            font-family: 'Roboto', sans-serif;
             height: 100%;
-            display: flex;
-            flex-direction: column;
+            font-family: 'Roboto', sans-serif;
             color: #333;
         }
 
         body {
-            background-color: #f5f5f5;
+            background-image: url('pexels-raybilcliff-1473089.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
         }
 
         header, footer {
             width: 100%;
             padding: 20px;
-            background-color: #1e1e1e;
+            background-color: rgba(30, 30, 30, 0.8);
             color: #fff;
             text-align: center;
         }
@@ -43,173 +46,71 @@
             font-size: 2em;
         }
 
+        /* Hauptinhalt */
         .main-content {
             flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
+            text-align: center;
+            margin: 20px;
+            border-radius: 10px;
         }
 
-        /* Zeitstrahl */
-        .timeline-container {
-            max-width: 1200px;
-            width: 100%;
-            position: relative;
-            padding: 40px 0;
+        .main-content h2 {
+            font-size: 1.8em;
+            margin-bottom: 40px;
+            color: #fff;
         }
 
-        .timeline {
+        .main-content p {
+            color: #fff;
+        }
+
+        /* Navigationsbuttons */
+        .nav-buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+        }
+
+        .nav-button {
+            background-color: rgba(30, 30, 30, 0.8);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            width: 200px;
             display: flex;
             flex-direction: column;
-            position: relative;
+            align-items: center;
         }
 
-        .timeline::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-            background-color: #1e1e1e;
+        .nav-button:hover {
+            background-color: rgba(50, 50, 50, 0.8);
         }
 
-        .timeline-event {
-            display: flex;
-            width: 100%;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .timeline-event:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .timeline-event-content {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            width: 45%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-
-        .timeline-event::before {
-            content: "";
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background-color: #1e1e1e;
-            border-radius: 50%;
-            z-index: 1;
-        }
-
-        .timeline-event:nth-child(odd) .timeline-event-content {
-            margin-left: 60px;
-        }
-
-        .timeline-event:nth-child(even) .timeline-event-content {
-            margin-right: 60px;
-        }
-
-        .timeline-event h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-
-        .timeline-event p {
-            font-size: 1em;
-            line-height: 1.6;
-        }
-
-        /* Bildstil */
-        .timeline-event-content img {
-            width: 100%;
+        .nav-button img {
+            width: 100px;
             height: auto;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-
-        .image-caption {
-            font-size: 0.8em;
-            color: #666;
             margin-bottom: 10px;
-        }
-
-        /* Tooltip-Box */
-        .tooltip {
-            display: none;
-            position: absolute;
-            top: 100%; /* Position unterhalb des Inhalts */
-            left: 50%;
-            transform: translateX(-50%);
-            width: 250px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: left;
-            z-index: 10;
-        }
-
-        .timeline-event-content:hover .tooltip {
-            display: block;
-        }
-
-        .tooltip p {
-            font-size: 0.9em;
-            color: #333;
-            margin-bottom: 8px;
-        }
-
-        .tooltip a {
-            font-size: 0.9em;
-            color: #1e90ff;
-            text-decoration: none;
-        }
-
-        .tooltip a:hover {
-            text-decoration: underline;
+            border-radius: 5px;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .timeline::before {
-                left: 20px;
-            }
-
-            .timeline-event {
+            .nav-buttons {
                 flex-direction: column;
-                align-items: flex-start;
+                gap: 20px;
             }
 
-            .timeline-event:nth-child(even) {
-                flex-direction: column;
-            }
-
-            .timeline-event-content {
+            .nav-button {
                 width: 100%;
-                margin: 20px 0 0 40px;
-            }
-
-            .timeline-event:nth-child(even) .timeline-event-content {
-                margin: 20px 0 0 40px;
-            }
-
-            .timeline-event::before {
-                left: 20px;
-            }
-
-            .tooltip {
-                left: 50%;
-                transform: translateX(-50%);
-                top: 100%;
+                text-align: center;
             }
         }
     </style>
@@ -218,106 +119,33 @@
 
     <!-- Header -->
     <header>
-        <h1>Schutz von Kulturstätten und kulturellen Errungenschaften</h1>
+        <h1>Kulturschutz</h1>
     </header>
 
     <!-- Hauptinhalt -->
     <div class="main-content">
-        <div class="timeline-container">
-            <div class="timeline">
-                <!-- Ereignis 1 -->
-                <div class="timeline-event">
-                    <div class="timeline-event-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Distinctive_emblem_special_protection.svg" alt="Haager Konvention 1954">
-                        <p class="image-caption">Bildnachweis:sarang, Public domain, via Wikimedia Commons</p>
-                        <h3>1954 – Haager Konvention</h3>
-                        <p>Erstes internationales Abkommen zum Schutz von Kulturgut bei bewaffneten Konflikten.</p>
-                        <div class="tooltip">
-                            <p>Die Haager Konvention legt Maßnahmen fest, um Kulturgüter in Kriegszeiten zu schützen.</p>
-                            <a href="https://de.wikipedia.org/wiki/Haager_Konvention_zum_Schutz_von_Kulturgut_bei_bewaffneten_Konflikten" target="_blank">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ereignis 2 -->
-                <div class="timeline-event">
-                    <div class="timeline-event-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Unesco_world_heritage_sites.png" alt="UNESCO-Welterbekonvention 1972">
-                        <p class="image-caption">Bildnachweis: Jkan997, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons</p>
-                        <h3>1972 – UNESCO-Welterbekonvention</h3>
-                        <p>Gründung des UNESCO-Welterbes zum Schutz von Kultur- und Naturstätten von außergewöhnlichem Wert.</p>
-                        <div class="tooltip">
-                            <p>Die Konvention fördert die Identifizierung, den Schutz und die Erhaltung des kulturellen Erbes.</p>
-                            <a href="https://de.wikipedia.org/wiki/UNESCO-Welterbe" target="_blank">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ereignis 3 -->
-                <div class="timeline-event">
-                    <div class="timeline-event-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Abusimbel.jpg" alt="Rettung der Nubischen Denkmäler">
-                        <p class="image-caption">Bildnachweis: "Per-Olow" - Per-Olow Anderson (1921-1989), Public domain, via Wikimedia Commons</p>
-                        <h3>1960-1980 – Rettung der Nubischen Denkmäler</h3>
-                        <p>Internationale Kampagne zur Rettung der Tempel von Abu Simbel vor den Fluten des Assuan-Staudamms.</p>
-                        <div class="tooltip">
-                            <p>Ein Meilenstein der internationalen Zusammenarbeit zum Schutz von Kulturgütern.</p>
-                            <a href="https://de.wikipedia.org/wiki/Tempel_von_Abu_Simbel" target="_blank">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ereignis 4 -->
-                <div class="timeline-event">
-                    <div class="timeline-event-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/UNESCO-ICH-blue.svg" alt="UNESCO-Konvention 2006">
-                        <p class="image-caption">Bildnachweis: Dragutin Dado Kovačević, Public domain, via Wikimedia Commons</p>
-                        <h3>2003 – Konvention zur Bewahrung des immateriellen Kulturerbes</h3>
-                        <p>Schutz von Traditionen, Bräuchen und Ausdrucksformen als Teil des kulturellen Erbes.</p>
-                        <div class="tooltip">
-                            <p>Die Konvention fördert das Bewusstsein für die Bedeutung des immateriellen Kulturerbes.</p>
-                            <a href="https://de.wikipedia.org/wiki/Immaterielles_Kulturerbe" target="_blank">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ereignis 5 -->
-                <div class="timeline-event">
-                    <div class="timeline-event-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Distinctive_emblem_for_cultural_property.svg" alt="Gründung von Blue Shield International">
-                        <p class="image-caption">Bildnachweis: Jan Zachwatowicz Poland, Public domain, via Wikimedia Commons</p>
-                        <h3>1996 – Gründung von Blue Shield International</h3>
-                        <p>Internationale Organisation zum Schutz von Kulturgütern bei bewaffneten Konflikten und Katastrophen.</p>
-                        <div class="tooltip">
-                            <p>Blue Shield agiert als "kulturelles Rotes Kreuz" zum Schutz von Kulturerbe.</p>
-                            <a href="https://de.wikipedia.org/wiki/Blue_Shield_International" target="_blank">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ereignis 6 -->
-                <div class="timeline-event">
-                    <div class="timeline-event-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_the_United_Nations.svg" alt="UN-Resolution 2347 (2017)">
-                        <p class="image-caption">Bildnachweis: Denelson83, Zscout370 ve Madden, Public domain, via Wikimedia Commons</p>
-                        <h3>2017 – UN-Resolution 2347</h3>
-                        <p>Erste Resolution des UN-Sicherheitsrats zum Schutz von Kulturgut in bewaffneten Konflikten.</p>
-                        <div class="tooltip">
-                            <p>Die Resolution verurteilt die Zerstörung von Kulturgut und fordert Maßnahmen zu dessen Schutz.</p>
-                            <a href="https://de.wikipedia.org/wiki/Liste_der_Resolutionen_des_UN-Sicherheitsrates_(2017)" target="_blank">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+        <h2>Willkommen auf unserer Webseite zum Schutz von Kulturstätten und kulturellen Errungenschaften</h2>
+        <p>Bitte wählen Sie eine der folgenden Optionen:</p>
+        <div class="nav-buttons">
+            <a href="timeline.html" class="nav-button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Ancestors_2.gif" alt="Geschichte">
+                Geschichte des Kulturschutzes
+            </a>
+            <a href="karte.html" class="nav-button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Winkel-tripel-projection.jpg" alt="Karte">
+                Kulturstätten weltweit
+            </a>
+            <a href="page199.html" class="nav-button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Book_icon.png" alt="Seite 199">
+                Seite 199
+            </a>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Kulturschutz | Schutz von Kulturstätten und kulturellen Errungenschaften</p>
+        <p>&copy; 2024 Kulturschutz | Bewahrung unseres kulturellen Erbes</p>
     </footer>
 
 </body>
 </html>
-
