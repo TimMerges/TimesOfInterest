@@ -24,15 +24,33 @@
         }
 
         .content {
-            max-width: 800px;
+            display: flex;
+            max-width: 1200px;
             margin: 20px auto;
-            padding: 20px;
+            gap: 20px;
             background: #fff;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
         }
 
-        h1, h2 {
+        .original-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .original-image img {
+            max-width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .transcription {
+            flex: 2;
+        }
+
+        .transcription h2 {
+            margin-top: 0;
             color: #444;
         }
 
@@ -75,35 +93,26 @@
 
     <!-- Content -->
     <div class="content">
-        <h2>Seite 199</h2>
-        <p>Hier ist der Inhalt von Seite 199, basierend auf dem TEI-Dokument:</p>
-        <article>
-            <!-- facs_4_r_6 region with "198" -->
-            <div class="text-region" id="facs_4_r_6">
+        <!-- Original Image -->
+        <div class="original-image">
+            <img src="199.jpg" alt="Original Text Seite 199">
+        </div>
+
+        <!-- Transcription -->
+        <div class="transcription">
+            <h2>Seite 199 Transkription</h2>
+            <article>
                 <p><strong>198</strong></p>
-            </div>
-
-            <!-- facs_4_r region with "Reise um die Welt" -->
-            <div class="text-region" id="facs_4_r">
                 <p><strong>Reise um die Welt</strong></p>
-            </div>
-
-            <!-- facs_4_r_12 region with "Reise von Neu-Seeland nach O-Tahiti." -->
-            <div class="text-region" id="facs_4_r_12">
                 <p>Reise von <span class="placeName" data-wikidata="Q664">Neu-Seeland</span> nach <span class="placeName" data-wikidata="Q42000">O-Tahiti</span>.</p>
-            </div>
-
-            <!-- facs_4_r_13 region: text about Cooks-Straße etc. -->
-            <div class="text-region" id="facs_4_r_13">
                 <p>Nachmittags gelangten wir in <span class="placeName" data-wikidata="Q5023">Cooks-Straße</span> *), liefen selbige  
                 nach Süden zu herab, und hatten nun den unermeßlichen Ocean  
                 vor uns, der unter dem Namen der Südsee bekannt ist...</p>
                 <p>*) Die Besitzer von <span class="persName" data-wikidata="Q3181710">Hawkesworths</span> Geschichte der englischen Seerei¬  
                 sen werden bei dieser und ähnlichen Stellen, die in mehrgedachtem Werk  
                 befindlichen Karten mit Nutzen zu Rathe ziehen.</p>
-            </div>
-        </article>
-        <a href="index.html" class="back-link">Zurück zur Hauptseite</a>
+            </article>
+        </div>
     </div>
 
     <!-- Footer -->
