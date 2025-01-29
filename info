@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über Georg Forsters Weltreisen</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Verlinke dein CSS -->
+</head>
+<body>
+    <section id="intro">
+        <h1>Über Georg Forsters Weltreisen</h1>
+        <p>
+            Diese Website bietet Einblicke in die faszinierenden Reisen und Entdeckungen von Georg Forster,
+            einem der bedeutendsten Naturforscher und Entdecker des 18. Jahrhunderts.
+        </p>
+        <p>
+            Erfahren Sie mehr über seine wissenschaftlichen Leistungen, die kulturelle Vielfalt der besuchten Orte und die Bedeutung seiner Arbeit für die Weltgeschichte.
+        </p>
+        <a href="index.html" class="btn">Zurück zur Startseite</a>
+    </section>
+</body>
+</html>
