@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Georg Forsters Reisen</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <style>
+        /* Stellt sicher, dass die Karte die ganze Seite einnimmt */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        #map {
+            height: 100vh; /* Die Karte soll den ganzen Bildschirm einnehmen */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Div-Element für die Karte -->
+    <div id="map"></div>
+
+    <script>
+        // 1. Erstelle eine Karte und setze den Startpunkt (Mitte von Europa)
+        var map = L.map('map').setView([50, 10], 4);
+
+        // 2. Füge eine Kartenquelle hinzu (OpenStreetMap)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // 3. Marker für Orte von Forster hinzufügen
+        var forsterOrte = [
+            { name: "Petersburg", coords: [59.9343, 30.3351] },
+            { name: "London", coords: [51.5074, -0.1278] },
+            { name: "Tahiti", coords: [-17.6509, -149.4260] },
+            { name: "Paris", coords: [48.8566, 2.3522] }
+        ];
+
+        forsterOrte.forEach(function(ort) {
+            L.marker(ort.coords)
+                .addTo(map)
+                .bindPopup("<b>" + ort.name + "</b><br>Hier war Georg Forster.");
+        });
+
+    </script>
+
+</body>
+</html>
